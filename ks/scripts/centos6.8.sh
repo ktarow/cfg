@@ -1,9 +1,9 @@
-cd $HOME/git/cfg
+cd $HOME/git/cfg/ks
 
 virt-install \
 --name $VMNAME \
 --network=bridge:br0 \
---disk path=$VMPATH,size=100 \
+--disk path=$VMPATH/$VMNAME,size=30 \
 --ram 8192 \
 --vcpus 2 \
 --graphics none \
