@@ -3,12 +3,12 @@ import directors;
 import std;
 
 backend server1 {
-    .host = "192.168.0.100";
+    .host = "10.99.0.10";
     .port = "80";
 }
 
 backend server2 {
-    .host = "192.168.0.101";
+    .host = "10.99.0.13";
     .port = "80";
 }
 
@@ -27,7 +27,7 @@ sub vcl_recv {
         }
     }
 
-    if (client.ip != "127.0.0.1" && std.port(server.ip) == 80 && req.http.host ~ "^(?i)(www\.)?example.com") {
+    if (client.ip != "127.0.0.1" && std.port(server.ip) == 80 && req.http.host ~ "^(?i)(www\.)?(ktarow.com|4ris4.info)") {
         set req.http.x-redir = "https://" + req.http.host + req.url;
         std.log(req.http.x-redir);
         return (synth(850, "Moved permanently"));
