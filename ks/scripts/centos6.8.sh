@@ -3,8 +3,8 @@ cd $HOME/git/cfg/ks
 virt-install \
 --name $VMNAME \
 --network=bridge:br0 \
---disk path=$VMPATH/$VMNAME,size=30 \
---ram 8192 \
+--disk path=$VMPATH/$VMNAME,size=50 \
+--ram 4096 \
 --vcpus 2 \
 --graphics none \
 --location http://ftp.iij.ad.jp/pub/linux/centos/6.8/os/x86_64 \
